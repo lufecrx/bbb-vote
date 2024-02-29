@@ -1,0 +1,15 @@
+<!-- Página de Votação -->
+<div *ngIf="votingPage" class="voting-container">
+  <h1 class="voting-header">Escolha o seu participante favorito:</h1>
+  <ul class="participant-list">
+    <li *ngFor="let participant of participants">
+      <button mat-button color="primary" class="participant-button" (click)="openConfirmationDialog(participant)">{{ participant.name }}</button>
+    </li>
+  </ul>
+</div>
+
+<!-- Página de Agradecimento -->
+<div *ngIf="thankYouPage" class="thankyou-container">
+  <h1 class="thankyou-header">Obrigado por votar!</h1>
+  <button mat-button color="accent" class="return-button" (click)="returnToVoting()">Voltar para votar mais</button>
+</div>

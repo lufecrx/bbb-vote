@@ -1,0 +1,37 @@
+/* Estilos para a página de votação */
+.voting-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.voting-header {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.participant-button {
+  margin-bottom: 10px;
+}
+
+/* Estilos para a página de agradecimento */
+.thankyou-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.thankyou-header {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.return-button {
+  margin-top: 20px;
+}
+
+.participant-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}

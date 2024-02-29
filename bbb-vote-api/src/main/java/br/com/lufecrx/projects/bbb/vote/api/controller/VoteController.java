@@ -1,6 +1,7 @@
 package br.com.lufecrx.projects.bbb.vote.api.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,13 +14,14 @@ import lombok.AllArgsConstructor;
 @RestController
 @RequestMapping("/api/vote")
 @AllArgsConstructor
+@CrossOrigin
 public class VoteController {
 
     private final VoteService service;
     
     @PostMapping
-    public ResponseEntity<String> vote(@RequestBody ParticipantModel participant) {
+    public ResponseEntity<ParticipantModel> vote(@RequestBody ParticipantModel participant) {
         service.addEvent(participant);
-        return ResponseEntity.ok("vote counted");
+        return ResponseEntity.ok(participant);
     }
 }

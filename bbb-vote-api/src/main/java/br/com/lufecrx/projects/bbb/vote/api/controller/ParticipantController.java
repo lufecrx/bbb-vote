@@ -1,8 +1,10 @@
 package br.com.lufecrx.projects.bbb.vote.api.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +19,7 @@ import lombok.AllArgsConstructor;
 @RestController
 @RequestMapping("/api/participants")
 @AllArgsConstructor
+@CrossOrigin
 public class ParticipantController {
     
     private final ParticipantRepository repository;
@@ -34,5 +37,10 @@ public class ParticipantController {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(opt.get());
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<ParticipantModel>> getAllParticipants() {
+        return ResponseEntity.ok(repository.findAll());
     }
 }
