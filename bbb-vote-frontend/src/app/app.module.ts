@@ -10,16 +10,12 @@ import { ConfirmationDialogComponent } from './components/confirmation-dialog/co
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
-import { RegisterVoteComponent } from './components/register-vote/register-vote.component';
-
-
 
 @NgModule({
   declarations: [
     AppComponent,
     VotingPageComponent,
-    ConfirmationDialogComponent,
-    RegisterVoteComponent
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
